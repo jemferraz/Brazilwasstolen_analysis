@@ -27,7 +27,7 @@ $$ H_{1}: \mu_{d} > 0 $$
 
 The test statistics for this hypothesis is
 
-$$ t = \sqrt{n} \frac{\overline{d}}{s_{d}} $$,
+$$ t = \sqrt{n} \frac{ \overline{d} }{ s_{d} }$$
 
 which has a standard t-student distribution with *n*-1 degrees of freedom under the null. 
 

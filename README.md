@@ -27,7 +27,7 @@ $$ H_{1}: \mu_{d} > 0 $$
 
 The test statistics for this hypothesis is
 
-$$ t = \sqrt{n} \frac{\overline{d}}{s_{d}}$$,
+$$ t = \sqrt{n} \frac{\overline{d}}{s_{d}} $$,
 
 which has a standard t-student distribution with *n*-1 degrees of freedom under the null. 
 
@@ -67,13 +67,15 @@ By varying the cut-off distance, from very large (say, 400 km) to very small (sa
 Script `script_test_urns_cluster_NE.py` implements the analysis described above for clusters formed from machine models in municipalities from the North-eastern region of the country, since that region was the source of the difference observed in the analysis for the UFs. The results obtained by varying the cut-off distance from 400 km to 0.1 km are presented in the table 2 and figure 2 below. In table 3 we present the results for the most disaggregated level (at 0.1 km) which corresponds to only one member (municipality) per cluster.
 
 ![table_2](/img/table_cluster.jpg)
+
 *Table 2 – Summary of the p-values for the test, as a function of the cut-off distance (km)*
 
 ![figure_2](/img/fig_pvalue_cluster_NE.jpg)
+
 *Figure 2 – p-values for the test, as a function of the cut-off distance (km)*
 
 ![table_3](/img/table_cities_NE.jpg)
-*Table 3 – Proportions for candidate 13 in the old and new models for the municipalities in the NE region with both types of models, and respective differences. These clusters are generated at the most disaggregated level (cut-off = 0.1 km). *
+*Table 3 – Proportions for candidate 13 in the old and new models for the municipalities in the NE region with both types of models, and respective differences. These clusters are generated at the most disaggregated level (cut-off = 0.1 km).*
 
 
 

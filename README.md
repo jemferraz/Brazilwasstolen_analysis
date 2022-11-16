@@ -7,7 +7,7 @@ The objective of this work is to check this claim by means of a formal statistic
 
 ## Data
 
-The data was downloaded from [BraziWasStolen.com](https://brazilwasstolen.com/en). However, the site is currently inaccessible from Brazil, due to interference of the Electoral Supreme Court (TSE). In order to make the analysis possible to other researchers, we provided the Excel spreadsheet `VOTOS_T1E2.xlsx` in the folder `data`.
+The data was downloaded from [BraziWasStolen.com](https://brazilwasstolen.com/en). However, the site is currently unstable, sometimes inaccessible from Brazil, possibly due to interference of the Electoral Supreme Court (TSE). In order to make the analysis possible to other researchers, we provided the Excel spreadsheet `VOTOS_T1E2.xlsx` in the folder `data`.
 
 Some people were worried that this particular dataset might have not come from the [official TSE website](https://dadosabertos.tse.jus.br/). However a simple check on a sample of the number of votes for the candidates, at any aggregation level (state, municipality, electoral zone) indicates that the values in the spreadsheet are consistent with the ones presented at the official website. 
 

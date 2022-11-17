@@ -9,7 +9,7 @@ The objective of this work is to check this claim by means of a formal statistic
 
 The data was downloaded from [BraziWasStolen.com](https://brazilwasstolen.com/en). However, the site is currently unstable, sometimes inaccessible from Brazil, possibly due to interference of the Electoral Supreme Court (TSE). In order to make the analysis possible to other researchers, we provided the Excel spreadsheet `VOTOS_T1E2.xlsx` in the folder `data`.
 
-Some people were worried that this particular dataset might have not come from the [official TSE website](https://dadosabertos.tse.jus.br/). However a simple check on a sample of the number of votes for the candidates, at any aggregation level (state, municipality, electoral zone) indicates that the values in the spreadsheet are consistent with the ones presented at the official website. 
+Some people were worried that this particular dataset might not have come from the [official TSE website](https://dadosabertos.tse.jus.br/). However a simple check on a sample of the number of votes for the candidates, at any aggregation level (state, municipality, electoral zone) indicates that the values in the spreadsheet are consistent with the ones presented at the official website. 
 
 Nonetheless, we tried to download the original data from the [official TSE website](https://dadosabertos.tse.jus.br/), only to find that the data had been tampered: the data files inside the zip files have dates from 2022-11-07 22:00, one week after the election, which, by itself, is highly suspicious.
 
@@ -53,7 +53,7 @@ Table 1 and figure 1 below illustrate the results for the first and second round
 
 In the first round, the sample average difference was 7.17%, with a sample standard deviation of 8.01%, resulting in a t-statistic of 4.65, and corresponding p-value of 4.21e-5.  In the second round, the sample average difference was 6.27%, with a sample standard deviation of 8.46%, resulting in a t-statistic of 3.85, and corresponding p-value of 3.44e-4. Therefore, we reject H0, for both the first and the second rounds, at the usual significance levels. Or in other words, we found evidence beyond a reasonable doubt, that the proportion of votes for candidate 13 in the old models was higher than that in the 2020 model, as stated by the Argentine website "BrazilWasStolen".
 
-Since the total number of votes in the old models in our sample was 64 660 376 and 64 832 379, for the first and second rounds, respectively, we estimate that the corresponding average difference in votes to be 4 637 092 and 4 065 286 in favour of candidate 13 in the old models.
+Since the total number of votes in the old models in our sample was 64 660 376 and 64 832 379, for the first and second rounds, respectively, we estimate that the corresponding average difference in votes to be 4 637 092, with a 95% confidence interval between 2 588 144 and 6 686 041, and 4 065 286, with a 95% confidence interval between 1 895 514 and 6 235 058, in favour of candidate 13 in the old models.
 
 
 ### Clusters of cities in the North-eastern region as experimental units
@@ -79,7 +79,7 @@ Script `script_test_urns_cluster_NE.py` implements the analysis described above 
 
 
 
-We can observe from the chart that, for all cut-off levels, the p-values of the H0 test remains well below the usual significance level (5%), implying that the observed difference in favour to candidate 13 in the old machine models is maintained at all aggregation levels of the machines, in the North-eastern region of the country. Therefore, we failed to find any indication of a non-random allocation of the machine models.
+We can observe from the chart that, for all cut-off levels, the p-values of the H0 test remains well below the usual significance level (5%), implying that the observed difference in favour of candidate 13 in the old machine models is maintained at all aggregation levels of the machines, in the North-eastern region of the country. Therefore, we failed to find any indication of a non-random allocation of the machine models.
 
 
 ### Electoral zones in the North-eastern region as experimental units

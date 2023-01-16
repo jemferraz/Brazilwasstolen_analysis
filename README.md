@@ -1,8 +1,10 @@
 # Analysis of the `BrazilWasStolen` main claim
 
-It was published by an Argentine individual in the website [BraziWasStolen.com](https://brazilwasstolen.com/en) a 76 page document with an analysis of the 2022 Brazilian Election for Presidency. The main claim in this document is that there is an anomalous difference in the proportion of votes for candidate 13 in the electronic ballot models manufactured prior to 2020 (old models: UE2015, UE2013, etc.) than on those manufactured in the 2020 model (UE2020).
+It was published by an Argentine in the website [BraziWasStolen.com](https://brazilwasstolen.com/en) a 76 page document with an analysis of the 2022 Brazilian Election for Presidency. The main claim in this document is that there is an anomalous difference in the proportion of votes for candidate 13 in the electronic voting machines manufactured prior to 2020 (old models: UE2015, UE2013, etc.) than on those manufactured in 2020 (model: UE2020).
 
-The objective of this work is to check this claim by means of a formal statistical test. In the next section we present the data that was used. Next, we explain the statistical procedure, and the corresponding results for different levels of aggregation of the electronic ballot machines. In the last section we present our conclusions.
+Why test the results in the 2020 model against those in the old models? Brazil uses a [direct-recording electronic voting machine]( https://en.wikipedia.org/wiki/DRE_voting_machine) without any print so as to allow the voter  to verify its vote. Since it is not possible to perform an ex-post audit of the votes, by comparing the result of the prints with the recorded ones, one has to rely on ex-ante auditing of the machines. However, according to the Argentinian website, only the 2020 model had auding reports available; the reports for the old models seemed to be missing. 
+
+The objective of this work is to check the main claim mentioned above by means of a formal statistical test. In the next section we present the data that was used. Next, we explain the statistical procedure, and the corresponding results for different levels of aggregation of the electronic voting machines. In the last section we present our conclusions.
 
 
 ## Data
@@ -11,12 +13,12 @@ The data was downloaded from [BraziWasStolen.com](https://brazilwasstolen.com/en
 
 Some people were worried that this particular dataset might not have come from the [official TSE website](https://dadosabertos.tse.jus.br/). However a simple check on a sample of the number of votes for the candidates, at any aggregation level (state, municipality, electoral zone) indicates that the values in the spreadsheet are consistent with the ones presented at the official website. 
 
-Nonetheless, we tried to download the original data from the [official TSE website](https://dadosabertos.tse.jus.br/), only to find that the data had been tampered: the data files inside the zip files have dates from 2022-11-07 22:00, one week after the election, which, by itself, is highly suspicious.
+Nonetheless, we tried to download the original data from the [official TSE website](https://dadosabertos.tse.jus.br/), only to find that the data had been tampered: the data files inside the zip files have dates from 2022-11-07 22:00, one week after the election and after the publishing of the report in the Argentinian website, which, by itself, is highly suspicious.
 
 
 ## Methods
 
-The assertion that the proportion of votes to candidate 13 in the old models is higher than the proportion of votes to candidate 13 in the 2020 model can be tested by means of the so called paired comparison design (see, for example, Montgomery(1983)). The basic idea is to compare the treatments (proportions of votes in the old and new models) in the same experimental unit, which here represents an aggregation of the electronic ballot machines that contains both types of machines, old and 2020 models. 
+The assertion that the proportion of votes to candidate 13 in the old models is higher than the proportion of votes to candidate 13 in the 2020 model can be tested by means of the so called paired comparison design (see, for example, Montgomery(1983)). The basic idea is to compare the treatments (proportions of votes in the old and new models) in the same experimental unit, which here represents an aggregation of the electronic voting machines that contains both types of machines, the old and the 2020 models. Implicitly we are assuming random allocation of the machines to the electoral zones, since there is no reason to assume that allocation to be non-random (e.g., based on the model), but later we’ll check this “homogeneity” hypothesis.
 
 Let's call *d* the difference between those proportions for a particular experimental unit. Under the null hypothesis of no difference in proportions, the mean *d* should be zero, against the alternative hypothesis that the mean *d* should be positive. That is, 
 
@@ -53,14 +55,14 @@ Table 1 and figure 1 below illustrate the results for the first and second round
 
 In the first round, the sample average difference was 7.17%, with a sample standard deviation of 8.01%, resulting in a t-statistic of 4.65, and corresponding p-value of 4.21e-5.  In the second round, the sample average difference was 6.27%, with a sample standard deviation of 8.46%, resulting in a t-statistic of 3.85, and corresponding p-value of 3.44e-4. Therefore, we reject H0, for both the first and the second rounds, at the usual significance levels. Or in other words, we found evidence beyond a reasonable doubt, that the proportion of votes for candidate 13 in the old models was higher than that in the 2020 model, as stated by the Argentine website "BrazilWasStolen".
 
-Since the total number of votes in the old models in our sample was 64 660 376 and 64 832 379, for the first and second rounds, respectively, we estimate that the corresponding average difference in votes to be 4 637 092, with a 95% confidence interval between 2 588 144 and 6 686 041, and 4 065 286, with a 95% confidence interval between 1 895 514 and 6 235 058, in favour of candidate 13 in the old models.
+Since the total number of votes in the old models in our sample was 64 660 376 and 64 832 379, for the first and second rounds, respectively, we estimate that the corresponding average difference in votes in the first round to be 4 637 092, with a 95% confidence interval between 2 588 144 and 6 686 041, and in the second round to be 4 065 286, with a 95% confidence interval between 1 895 514 and 6 235 058, in favour of candidate 13 in the old models.
 
 
 ### Clusters of cities in the North-eastern region as experimental units
 
-After the analysis for the UFs in the previous section, some people raised the hypothesis that the observed difference might be due to a non-random allocation of the old machine models to places where candidate 13 would naturally have had more votes. That is possible, though also strange: why would the TSE not allocate the machine models randomly in the UFs?
+After the analysis for the UFs in the previous section, some people raised the hypothesis that the observed difference might be due to a non-random allocation of the old machine models to places where candidate 13 would naturally have more votes. That is possible, though also strange: why would the TSE allocate the machine models not randomly in the UFs? Where is the procedure manual stating how this allocation should be?
 
-In effect, this hypothesis corresponds to a supposed "heterogeneity" in the previous experimental units (UFs). Thus, in order to obtain more "homogeneous" groups we could aggregate the machine models based on their haversine distance from each other by means of Cluster Analysis, and sample those clusters with both old and 2020 models. The haversine distance is the distance along a maximum circle of a spherical surface between two points, given their geographical coordinates (latitude and longitude). The cluster are formed by specifying a maximum (cut-off) distance between members of the cluster.
+In effect, this hypothesis corresponds to a supposed "heterogeneity" in the previous experimental units (UFs). Thus, in order to obtain more "homogeneous" groups we could aggregate the machine models based on their haversine distance from each other by means of Cluster Analysis, and sample those clusters with both the old and the 2020 models. The [haversine distance](https://en.wikipedia.org/wiki/Haversine_formula) is the distance along a maximum circle of a spherical surface between two points, given their geographical coordinates (latitude and longitude). The cluster are formed by specifying a maximum (cut-off) distance between members of the cluster.
 
 By varying the cut-off distance, from very large (say, 400 km) to very small (say, 01. km), we should observe every more homogeneous groups, if the machine models had been non randomly distributed, weakening the test, and causing the failure of the rejection of the original H0. However, if, on the contrary, we still reject the original H0 after decreasing the cut-off distance, we would fail to infer any heterogeneity in the allocation of the machine models.
 
@@ -99,7 +101,7 @@ Therefore, there is no compelling evidence that the observed difference in favou
 
 ## Conclusions
 
-We confirm the assertion of "BrazilWasStolen" that the proportion of votes for candidate 13 in the old electronic ballot models is significantly higher than those in the 2020 model, beyond a reasonable doubt.
+We confirm the assertion of "BrazilWasStolen" that the proportion of votes for candidate 13 in the old electronic voting machine models is significantly higher than those in the 2020 model, beyond a reasonable doubt.
 
 We found no compelling evidence that this was the result of a non-random allocation of the old models to places where candidate 13 would have more votes. On the contrary, we found compelling evidence that the observed effect is maintained at every aggregation level of the municipalities.
 
@@ -108,4 +110,4 @@ Therefore, the actual reason for the observed significant difference must be som
 ## References
 
 Montgomery, Douglas C., **Design and Analysis of Experiments**, Second Edition, John Wiley & Sons, 1983.
-"# Brazilwasstolen_analysis" 
+"# Brazilwasstolen_analysis"

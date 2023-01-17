@@ -51,7 +51,8 @@ Table 1 and figure 1 below illustrate the results for the first and second round
 *Table 1 – Proportions for candidate 13 in the old and new models for all UFs, and respective differences*
 
 ![figure_1](/img/histograms_UF.jpg)
-*Figure 1 – Histograms for the differences in the first round (left) and in the second round (right), for all UFs (top) and discriminating the UFs in the NE region from the 
+*Figure 1 – Histograms for the differences in the first round (left) and in the second round (right), for all UFs (top) and discriminating the UFs in the NE region from the other UFs.*
+
 In the first round, the sample average difference was 7.17%, with a sample standard deviation of 8.01%, resulting in a t-statistic of 4.65, and corresponding p-value of 4.21e-5.  In the second round, the sample average difference was 6.27%, with a sample standard deviation of 8.46%, resulting in a t-statistic of 3.85, and corresponding p-value of 3.44e-4. Therefore, we reject H0, for both the first and the second rounds, at the usual significance levels. Or in other words, we found evidence beyond a reasonable doubt, that the proportion of votes for candidate 13 in the old models was higher than that in the 2020 model, as stated by the Argentinian website "BrazilWasStolen".
 
 Since the total number of votes in the old models in our sample was 64 660 376 and 64 832 379, for the first and second rounds, respectively, we estimate that the corresponding average difference in votes in the first round to be 4 637 092, with a 95% confidence interval between 2 588 144 and 6 686 041, and in the second round to be 4 065 286, with a 95% confidence interval between 1 895 514 and 6 235 058, in favour of candidate 13 in the old models.

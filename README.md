@@ -100,7 +100,7 @@ Therefore, there is no compelling evidence that the observed difference in favou
 
 ## Conclusions
 
-We confirm the assertion of "BrazilWasStolen" that the proportion of votes for candidate 13 in the old electronic voting machine models is significantly higher than those in the 2020 model, beyond a reasonable doubt. This difference amounts to circa 4 million votes, more than enough to change the result of the election in favour of candidate 13.
+We confirm the assertion of "BrazilWasStolen" that the proportion of votes for candidate 13 in the old electronic voting machine models is significantly higher than those in the 2020 model, beyond a reasonable doubt. This difference amounts to circa 4 million votes (between 2 and 6 million votes, with a 95% confidence), in both first and second rounds, more than enough to change the result of the election in favour of candidate 13.
 
 We found no compelling evidence that this was the result of a non-random allocation of the old models to places where candidate 13 would have more votes. On the contrary, we found compelling evidence that the observed effect is maintained at every aggregation level of the municipalities.
 

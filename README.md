@@ -1,6 +1,6 @@
 # Analysis of the `BrazilWasStolen` main claim
 
-It was published by an Argentine in the website [BraziWasStolen.com](https://brazilwasstolen.com/en) a 76 page document with an analysis of the 2022 Brazilian Election for Presidency. The main claim in this document is that there is an anomalous difference in the proportion of votes for candidate 13 in the electronic voting machines manufactured prior to 2020 (old models: UE2015, UE2013, etc.) than on those manufactured in 2020 (model: UE2020).
+It was published by an Argentine in the website [BraziWasStolen.com](https://brazilwasstolen.com/en) a 76 page document with an analysis of the 2022 Brazilian Election for Presidency. The main claim in this document is that there is an anomalous difference in the proportion of votes for candidate 13 (Lula da Silva) in the electronic voting machines manufactured prior to 2020 (old models: UE2015, UE2013, etc.) than on those manufactured in 2020 (model: UE2020).
 
 Why test the results from the 2020 model against those from the old models? Brazil uses a [direct-recording electronic voting machine]( https://en.wikipedia.org/wiki/DRE_voting_machine) without any print so as to allow the voter  to verify its vote. Since it is not possible to perform an *ex-post* audit of the votes by comparing the result of the prints with the recorded ones, one has to rely on an *ex-ante* auditing of the machines. However, according to the Argentinian website, only the 2020 model had auding reports available; the reports for the old models seemed to be missing. 
 

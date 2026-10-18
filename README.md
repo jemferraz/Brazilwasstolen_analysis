@@ -1,6 +1,6 @@
 # Analysis of the `BrazilWasStolen` main claim
 
-It was published by an Argentine in the website [BraziWasStolen.com](https://brazilwasstolen.com/en) a 76 page document with an analysis of the 2022 Brazilian Election for Presidency. The main claim in this document is that there is an anomalous difference in the proportion of votes for candidate 13 (Lula da Silva) in the electronic voting machines manufactured prior to 2020 (old models: UE2015, UE2013, etc.) than on those manufactured in 2020 (model: UE2020).
+It was published by an Argentine, Fernando Cerimedo, in the website [BraziWasStolen.com](https://brazilwasstolen.com/en) a 76 page document with an analysis of the 2022 Brazilian Election for Presidency. The main claim in this document is that there is an anomalous difference in the proportion of votes for candidate 13 (Lula da Silva) in the electronic voting machines manufactured prior to 2020 (old models: UE2015, UE2013, etc.) than on those manufactured in 2020 (model: UE2020).
 
 Why test the results from the 2020 model against those from the old models? Brazil uses a [direct-recording electronic voting machine]( https://en.wikipedia.org/wiki/DRE_voting_machine) without any print so as to allow the voter  to verify its vote. Since it is not possible to perform an *ex-post* audit of the votes by comparing the result of the prints with the recorded ones, one has to rely on an *ex-ante* auditing of the machines. However, according to the Argentinian website, only the 2020 model had auding reports available; the reports for the old models seemed to be missing. 
 
@@ -18,7 +18,7 @@ Nonetheless, we tried to download the original data from the [official TSE websi
 
 ## Methods
 
-The assertion that the proportion of votes to candidate 13 in the old models is higher than the proportion of votes to candidate 13 in the 2020 model can be tested by means of the so called **paired comparison design** (see, for example, Montgomery(1983)). The basic idea is to compare the treatments (proportions of votes in the old and in the new models) in the same experimental unit, which here represents an aggregation of the electronic voting machines that contains both types of machines, the old and the 2020 models. Implicitly we are assuming random allocation of the machines to the electoral zones, since there is no reason to assume that allocation to be non-random (e.g., based on the machine model), but later weíll check this ìhomogeneityî hypothesis.
+The assertion that the proportion of votes to candidate 13 in the old models is higher than the proportion of votes to candidate 13 in the 2020 model can be tested by means of the so called **paired comparison design** (see, for example, Montgomery(1983)). The basic idea is to compare the treatments (proportions of votes in the old and in the new models) in the same experimental unit, which here represents an aggregation of the electronic voting machines that contains both types of machines, the old and the 2020 models, in a "location" based on their distances. Implicitly we are assuming random allocation of the machines to the electoral zones, since there is no reason to assume that allocation to be non-random (e.g., based on the machine model), but later we‚Äôll check this ‚Äúhomogeneity‚Äù hypothesis. By "homogeneous" experimental units we mean that in the "location" which have both type of machines (treatments) all known and unknown factors that might influence the result are the same, like for example, level of income, level of education, social status, etc.. Since the treatments (in this case, voting machines) are applied in the same the experimental units, we obtain a much powerful statistical test than that by using the typical analysis of variance or regression type analysis.
 
 Let's call *d* the difference between those proportions for a particular experimental unit. Under the null hypothesis of no difference in proportions, the mean *d* should be zero, against the alternative hypothesis that the mean *d* should be positive. That is, 
 
@@ -48,10 +48,10 @@ For this case we developed the Python script `script_test_urns_uf.py`.
 Table 1 and figure 1 below illustrate the results for the first and second rounds of the election, with a total of 27 UFs. Since the histograms seem to indicate a bi- or tri-modal distribution, we also plotted the observed differences separating the UFs of the North-eastern region from the other UFs in the country.
 
 ![table_1](/img/table_UF.jpg)
-*Table 1 ñ Proportions for candidate 13 in the old and new models for all UFs, and respective differences*
+*Table 1 ‚Äì Proportions for candidate 13 in the old and new models for all UFs, and respective differences*
 
 ![figure_1](/img/histograms_UF.jpg)
-*Figure 1 ñ Histograms for the differences in the first round (left) and in the second round (right), for all UFs (top) and discriminating the UFs in the NE region from the UFs in the other regions (bottom).*
+*Figure 1 ‚Äì Histograms for the differences in the first round (left) and in the second round (right), for all UFs (top) and discriminating the UFs in the NE region from the UFs in the other regions (bottom).*
 
 In the first round, the sample average difference was 7.17%, with a sample standard deviation of 8.01%, resulting in a t-statistic of 4.65, and corresponding p-value of 4.21e-5.  In the second round, the sample average difference was 6.27%, with a sample standard deviation of 8.46%, resulting in a t-statistic of 3.85, and corresponding p-value of 3.44e-4. Therefore, we reject H0, for both the first and the second rounds, at the usual significance levels. Or in other words, we found evidence beyond a reasonable doubt, that the proportion of votes for candidate 13 in the old models was higher than that in the 2020 model, as stated by the Argentinian website "BrazilWasStolen".
 
@@ -70,14 +70,14 @@ Script `script_test_urns_cluster_NE.py` implements the analysis described above 
 
 ![table_2](/img/table_cluster.jpg)
 
-*Table 2 ñ Summary of the p-values for the test, as a function of the cut-off distance (km)*
+*Table 2 ‚Äì Summary of the p-values for the test, as a function of the cut-off distance (km)*
 
 ![figure_2](/img/fig_pvalue_cluster_NE.jpg)
 
-*Figure 2 ñ p-values for the test, as a function of the cut-off distance (km)*
+*Figure 2 ‚Äì p-values for the test, as a function of the cut-off distance (km)*
 
 ![table_3](/img/table_cities_NE.jpg)
-*Table 3 ñ Proportions for candidate 13 in the old and new models for the municipalities in the NE region with both types of models, and respective differences. These clusters were generated at the most disaggregated level (cut-off = 0.1 km), which corresponds to a single municipality (city) per cluster.*
+*Table 3 ‚Äì Proportions for candidate 13 in the old and new models for the municipalities in the NE region with both types of models, and respective differences. These clusters were generated at the most disaggregated level (cut-off = 0.1 km), which corresponds to a single municipality (city) per cluster.*
 
 
 
@@ -89,11 +89,11 @@ We can observe from the chart that, for all cut-off levels, the p-values of the 
 Eventually, the last level we could aggregate machine models is by electoral zone. Script `script_test_urns_zone_NE.py` performs the analysis for the electoral zones in the North-eastern region. The results are presented in table 4 below.
 
 ![table_4](/img/table_zone_NE.jpg)
-*Table 4 ñ Proportions for candidate 13 in the old and new models for the electoral zones in the NE region with both types of models, and respective differences.*
+*Table 4 ‚Äì Proportions for candidate 13 in the old and new models for the electoral zones in the NE region with both types of models, and respective differences.*
 
 In the first round, the sample average difference was -4.79%, with a sample standard deviation of 6.81%, resulting in a t-statistic of -2.11, and corresponding p-value of 0.966.  In the second round, the sample average difference was -5.11%%, with a sample standard deviation of 6.34%, resulting in a t-statistic of -2.42, and corresponding p-value of 0.979.
 
-Therefore, we failed to reject H0 at the usual significance levels, but that is to be expected due to the very weak power of the test, since the sample is small (only 8 experimental units), biased (all electoral zones are from municipalities in the state of Maranh„o, MA), and irrelevant (the total number of votes in the old models for the sampled experimental units is only 8181 and 8158 votes, for the first and second rounds, respectively).
+Therefore, we failed to reject H0 at the usual significance levels, but that is to be expected due to the very weak power of the test, since the sample is small (only 8 experimental units), biased (all electoral zones are from municipalities in the state of Maranh√£o, MA), and irrelevant (the total number of votes in the old models for the sampled experimental units is only 8181 and 8158 votes, for the first and second rounds, respectively).
 
 Therefore, there is no compelling evidence that the observed difference in favour of candidate 13 in the old electronic ballot models is due to a non-random allocation of the machine models to particular electoral zones.
 

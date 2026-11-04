@@ -274,12 +274,12 @@ def test_difference(df):
 df_all = pd.read_excel("data/VOTOS_T1E2.xlsx")
 
 #Read data file with municipalities and respective geographical coordinates
-df_cities = pd.read_csv("municipios.csv")
+df_cities = pd.read_csv("data/municipios.csv")
 city_name_list = df_cities["nome"].to_list()
 city_name_list_lower = [x.lower() for x in city_name_list]
 
 #Read data file with states
-df_states = pd.read_csv("estados.csv")
+df_states = pd.read_csv("data/estados.csv")
 
 #Choose a filtering option:
 # 0. All regions
